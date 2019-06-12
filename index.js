@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name        Продаж в сутки
+// @name        CS:GO Skins Daily Sales
 // @namespace   https://github.com/inlace
 // @version     1.0.0
 // @author      Ilya
-// @description Показывает продажи в сутки
+// @description Shows amount of skin sales in 24 hours
 // @supportURL  https://github.com/inlace
-// @match       http://steamcommunity.com/market/listings/730/*
-// @match       https://steamcommunity.com/market/listings/730/*
+// @include		http://steamcommunity.com/*
+// @include		https://steamcommunity.com/*
 // @license     MIT
 // @grant       none
 // @run-at      document-end
