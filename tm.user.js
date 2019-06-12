@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Продажи за сутки и медианная цена
 // @namespace   https://github.com/inlace
-// @version     1.0.1
+// @version     1.0.2
 // @author      Inlace
 // @description Показывает продажи и медианную цену за сутки
 // @supportURL  https://github.com/inlace
