@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        Продажи за сутки и медианная цена
+// @name        Steam Market Info
 // @namespace   https://github.com/inlace
-// @version     1.0.2
+// @version     1.0.3
 // @author      Inlace
 // @description Показывает продажи и медианную цену за сутки
 // @supportURL  https://github.com/inlace
