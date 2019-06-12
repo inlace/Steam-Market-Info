@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        CS:GO Skins Daily Sales
+// @name        Продаж в сутки
 // @namespace   https://github.com/inlace
 // @version     1.0.0
-// @author      Ilya
-// @description Shows amount of skin sales in 24 hours
+// @author      Inlace
+// @description Показывает продажи скина в сутки
 // @supportURL  https://github.com/inlace
 // @match       http://steamcommunity.com/market/listings/730/*
 // @match       https://steamcommunity.com/market/listings/730/*
@@ -11,7 +11,7 @@
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
-const link = window.location.href.split("/")[6]
+const link = window.location.href.split("/")[6].split("?")[0]
 
 if (link !== null) {
     getVolume(link)
@@ -27,7 +27,9 @@ function getVolume(link) {
 function addVolume(volume) {
     const elmDivItem = document.querySelector('#largeiteminfo_item_descriptors');
     if (elmDivItem !== null) {
-        elmDivItem.innerHTML += `<div class="descriptor">&nbsp;</div>
-<div class="descriptor">Продаж в сутки：<span style="color: #5b9ace">${volume}</span></div>`;
+        if (volume == undefined) {
+            volume = 'нет'
+        }
+         elmDivItem.innerHTML += `<div class="descriptor">Продаж в сутки：<span style="color: #5b9ace">${volume}</span></div>`;
     }
 }
