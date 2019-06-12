@@ -1,18 +1,19 @@
 // ==UserScript==
-// @name        Продажи и медианная цена за сутки
+// @name        Продажи за сутки и медианная цена
 // @namespace   https://github.com/inlace
 // @version     1.0.1
 // @author      Inlace
 // @description Показывает продажи и медианную цену за сутки
 // @supportURL  https://github.com/inlace
-// @match       http://steamcommunity.com/market/listings/730/*
-// @match       https://steamcommunity.com/market/listings/730/*
+// @match       http://steamcommunity.com/market/listings/*
+// @match       https://steamcommunity.com/market/listings/*
 // @license     MIT
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
 
 const link = window.location.href.split("/")[6].split("?")[0]
+const appid = window.location.href.split("/")[5]
 
 if (link !== null) {
     getVolume(link)
@@ -21,12 +22,15 @@ if (link !== null) {
 
 function getVolume(link) {
     return fetch(`//steamcommunity.com/market/priceoverview/\
-?appid=730&currency=1&market_hash_name=${link}`)
+?appid=${appid}&currency=1&market_hash_name=${link}`)
         .then(res => res.json());
 }
 
 function addVolume(volume,median) {
-    const elmDivItem = document.querySelector('#largeiteminfo_item_descriptors');
+    var elmDivItem = document.querySelector('#largeiteminfo_item_actions');
+    if (appid == "570") {
+       elmDivItem = document.querySelector('#largeiteminfo_item_descriptors');
+    }
     if (elmDivItem !== null) {
         if (volume == undefined) {
             volume = 'нет'
