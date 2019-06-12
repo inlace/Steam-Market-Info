@@ -7,6 +7,7 @@
 // @supportURL  https://github.com/inlace
 // @match       http://steamcommunity.com/market/listings/*
 // @match       https://steamcommunity.com/market/listings/*
+// @icon      	https://store.steampowered.com/favicon.ico
 // @license     MIT
 // @grant       none
 // @run-at      document-end
